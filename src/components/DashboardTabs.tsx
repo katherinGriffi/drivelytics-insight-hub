@@ -84,7 +84,7 @@ const DashboardTabs = () => {
 
                     height="100%" // Set to 100% to fill the container
 
-                    src="https://app.powerbi.com/view?r=eyJrIjoiNDViZWYzM2QtYzU2OS00NWJiLWJmMDgtYzVhNDJjYmU2NzU0IiwidCI6IjkzN2JjYzgyLWZkYmYtNGYwMC1hOWUxLTUyN2U3NWUxMzU1MyIsImMiOjR9&pageName=a81fd906e6da8db9b557"
+                    src="https://app.powerbi.com/view?r=eyJrIjoiNDViZWYzM2QtYzU2OS00NWJiLWJmMDgtYzVhNDJjYmU2NzU0IiwidCI6IjkzN2JjYzgyLWZkYmYtNGYwMC1hOWUxLTUyN2U3NWUxMzU1MyIsImMiOjR9"
 
                     frameBorder="0"
 
