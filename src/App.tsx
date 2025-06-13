@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 // Pequeño cambio para forzar la actualización - 13 de junio de 2025
+// Forzando despliegue final - Viernes
 
 const queryClient = new QueryClient();
  // ... tu código ...
