@@ -4,23 +4,28 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  // Asegúrate de que esta línea esté presente y correcta
-  // Debe coincidir con el nombre de tu repositorio en GitHub
-  base: '/drivelytics-insight-hub/', 
+export default defineConfig(({ command, mode }) => {
+  // --- LÓGICA INTELIGENTE ---
+  // Si el comando es 'serve' (npm run dev), usa la base que te funciona localmente.
+  // Si no (es 'build'), usa la base para el dominio personalizado.
+  const base = command === 'serve' ? '/drivelytics-insight-hub/' : '/';
 
-  server: {
-    host: "::",
-    port: 8080,
-  },
-  plugins: [
-    react(),
-    mode === 'development' &&
-    componentTagger(),
-  ].filter(Boolean),
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
+  return {
+    base: base, // <-- Aquí se aplica la base correcta automáticamente
+
+    server: {
+      host: "::",
+      port: 8080,
     },
-  },
-}));
+    plugins: [
+      react(),
+      // El plugin de tagger solo se aplica en modo desarrollo
+      mode === 'development' && componentTagger(),
+    ].filter(Boolean),
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "./src"),
+      },
+    },
+  };
+});
